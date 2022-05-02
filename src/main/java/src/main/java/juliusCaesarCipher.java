@@ -94,10 +94,10 @@ public class juliusCaesarCipher {
         System.out.println("Welcome to the Julius Caesar Cipher App!");
 
         System.out.println("Would you like to encode or decode a message? Type 0 for encode, 1 for decode");
-        int userTaskChoice = input.nextInt(); // Sets whether user is to encode or decode a message
+        int userTaskChoice = input.nextInt();   // Sets whether user is to encode or decode a message - 0 for Encoding, 1 for Decoding
 
-        if(userTaskChoice == 0){ // Begins Encoding Process
-            String userTextInput= getInput(); //Asks user for some text
+        if(userTaskChoice == 0){                // Begins Encoding Process
+            String userTextInput= getInput();   //Asks user for some text
             int userShiftInput = getShiftInput();// Asks user for a shift value
             int[] userStringToNumberInput = getStringToNumber(userTextInput);
             System.out.println("Your message is: " + userTextInput);
@@ -106,14 +106,13 @@ public class juliusCaesarCipher {
 
         }
 
-        if (userTaskChoice == 1){ // Begins Decoding Process
+        if (userTaskChoice == 1){               // Begins Decoding Process
             String userNumberInput = getInput();
-            int[] userNumberInputArr = new int[userNumberInput.length()];
+            int[] userNumberInputArr = new int[userNumberInput.length()]; // Converts String input into Array
             for (int i = 0; i < userNumberInput.length(); i++) {
                 userNumberInputArr[i] = userNumberInput.charAt(i) - '0';
             }
             System.out.println("Encoded message is" + Arrays.toString(userNumberInputArr));
-
             int userShiftInput = getShiftInput();// Asks user for a shift value
             int[] userDecodedInput = getDecodedNumbers(userNumberInputArr, userShiftInput);
             System.out.println("Your decoded Message is: " + Arrays.toString(userDecodedInput));

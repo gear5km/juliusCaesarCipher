@@ -5,9 +5,6 @@ import java.util.Arrays;
 
 public class numberToString {
 
-
-
-
     int[] numberInput;
     int numberBlock;
     int[] stringOutput;
